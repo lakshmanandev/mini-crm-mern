@@ -6,6 +6,15 @@ import seedUsers from "./src/utils/seed.js";
 connectDB().then(seedUsers);
 
 const PORT = process.env.PORT || 5000;
+
+app.get("/", (req, res) => {
+  res.status(200).json({
+    status: "OK",
+    message: "Mini CRM API is running 🚀"
+  });
+});
+
+
 app.listen(PORT, () =>
   console.log(`Backend running on port ${PORT}`)
 );
